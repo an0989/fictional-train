@@ -1,0 +1,352 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   🌸 CHỦ ĐỀ: ROMANTIC PINK BOUTIQUE (HỒNG PASTEL THƠ MỘNG & SANG CHẢNH)
+   ========================================================================== */
+
+/* --- 1. ĐỊNH DẠNG NỀN TẢNG --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffcfc; 
+    color: #4a3b3b; 
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- 2. THANH MENU NAVBAR KÍNH MỜ CAO CẤP --- */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 999;
+    padding: 25px 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar.scrolled {
+    padding: 14px 0;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: 0 10px 40px rgba(255, 154, 162, 0.08) !important;
+    border-bottom: 1px solid rgba(255, 183, 178, 0.3);
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    color: #ff7b89;
+    text-decoration: none;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #614e4e;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover, 
+.nav-menu a.active {
+    color: #ff9aa2 !important;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; width: 0; height: 2px;
+    background: #ff9aa2;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* --- 3. CẤU TRÚC TIÊU ĐỀ TRANG KHÔNG GIAN BỘ SƯU TẬP --- */
+.collection-header {
+    margin-top: 160px; 
+    text-align: center; 
+    margin-bottom: 40px;
+}
+
+.collection-subtitle {
+    font-size: 11px; 
+    letter-spacing: 6px; 
+    text-transform: uppercase; 
+    color: #ff9aa2; 
+    font-weight: 600; 
+    display: block; 
+    margin-bottom: 12px;
+}
+
+.collection-title {
+    font-family: 'Playfair Display', serif; 
+    font-size: 42px; 
+    color: #4a3434; 
+    font-weight: 300; 
+    letter-spacing: 1px;
+}
+
+.collection-divider {
+    color: #ffb7b2; 
+    font-size: 12px; 
+    margin-top: 12px; 
+    letter-spacing: 6px;
+}
+
+/* --- 4. BỘ LỌC TABS THỜI TRANG --- */
+.collection-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.filter-tab {
+    background: transparent;
+    border: 1px solid #ffd5d8;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #6e5a5a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-tab.active, .filter-tab:hover {
+    background: linear-gradient(135deg, #ff9aa2, #ffb7b2);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(255, 154, 162, 0.25);
+}
+
+/* --- 5. LƯỚI SẢN PHẨM SANG TRỌNG --- */
+.products-grid-premium {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto 120px;
+}
+
+.card-premium {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 183, 178, 0.2);
+    box-shadow: 0 10px 30px rgba(255, 154, 162, 0.03);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.card-premium:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 154, 162, 0.15);
+    border-color: #ff9aa2;
+}
+
+/* --- 6. KHUNG ẢNH & TAG BOUTIQUE --- */
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+    background: #fff5f6;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-premium:hover .img-wrapper img {
+    transform: scale(1.04);
+}
+
+.luxury-tag {
+    position: absolute;
+    top: 20px; left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #ff7b89;
+    font-size: 11px; font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(255, 154, 162, 0.15);
+    z-index: 5;
+}
+
+.luxury-tag.tag-dark {
+    background: rgba(74, 52, 52, 0.9);
+    color: #fff;
+}
+
+/* --- 7. CHI TIẾT THÔNG TIN VÁY --- */
+.card-details {
+    padding: 30px;
+    text-align: center;
+}
+
+.card-details h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 21px;
+    color: #4a3434;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.price-tag {
+    font-size: 16px;
+    color: #ff7b89;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+}
+
+/* --- 8. HỆ THỐNG NÚT BẤM "CHẠM ĐỂ SỞ HỮU" --- */
+.cta-wrapper {
+    position: relative;
+    min-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-luxury-init {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff9aa2, #ffb7b2);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 154, 162, 0.3);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-luxury-init:hover {
+    background: linear-gradient(135deg, #ffb7b2, #ff9aa2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 154, 162, 0.45);
+}
+
+.action-luxury-group {
+    display: none;
+    opacity: 0;
+    width: 100%;
+    gap: 12px;
+    transition: opacity 0.3s ease;
+}
+
+.btn-luxury-confirm {
+    flex: 2;
+    padding: 14px;
+    background: #2d2323;
+    color: #fff0f1;
+    border: none;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-luxury-confirm:hover {
+    background: #4a3434;
+    transform: translateY(-1px);
+}
+
+.btn-luxury-cancel {
+    flex: 1;
+    padding: 14px;
+    background: #fff0f1;
+    color: #a68f91;
+    border: 1px solid #ffd5d8;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-luxury-cancel:hover {
+    background: #ffe5e7;
+    color: #ff7b89;
+}
+
+/* --- 9. CHÂN TRANG FOOTER --- */
+footer {
+    background: #2d2323;
+    color: #bfa3a5;
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 13.5px;
+    border-top: 2px solid #ff9aa2;
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+    color: #fff0f1;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* --- 10. ĐÁP ỨNG GIAO DIỆN DI ĐỘNG (RESPONSIVE) --- */
+@media (max-width: 768px) {
+    .collection-header { margin-top: 130px; }
+    .collection-title { font-size: 32px; }
+    .collection-filter { flex-wrap: wrap; gap: 8px; }
+    .filter-tab { padding: 6px 16px; font-size: 11px; }
+    .img-wrapper { height: 380px; }
+}

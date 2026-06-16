@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<link href="styles/default.css.css" type="text/css" rel="stylesheet"/>
+
+<script src="scrite/taitrang.js" type="text/javascript"></script>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Wedding Dress</title>
+    
+    <link rel="stylesheet" href="styles/default.css">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="scrite/taitrang.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Luxury Bride</h1>
+        <p>Vẻ Đẹp Hoàn Hảo Cho Ngày Trọng Đại</p>
+    </header>
+
+    <nav> 
+        <div id="menu-toggle">☰ DANH MỤC THỰC ĐƠN</div>
+        <div id="submenu">
+            <a href="trangchu.html">Trang Chủ</a> 
+            <a href="gioithieu.html">Giới Thiệu</a> 
+            <a href="sanpham.html">Sản Phẩm</a> 
+            <a href="bosutap.html">Bộ Sưu Tập</a> 
+            <a href="index.html">Liên Hệ</a> 
+            <a href="đangnhap.html">Đăng Nhập</a> 
+        </div>
+    </nav>
+
+    <section class="products">
+        <div class="card"> 
+            <img class="photo-effect" src="image/ad8f9942eb7fd78a4a4172bf852aec63.jpg" alt="Váy Công Chúa">
+            <h3>Váy Công Chúa</h3>
+            <p class="price">15.000.000 VNĐ</p>
+            <button onClick="moXacNhan('Váy Công Chúa')">Mua Ngay</button>
+        </div>
+        <div class="card"> 
+            <img class="photo-effect" src="image/5922d79b030c0b4778f48ecbdf74dd5b.jpg" alt="Váy Thanh Lịch">
+            <h3>Váy Thanh Lịch</h3>
+            <p class="price">18.000.000 VNĐ</p>
+            <button onClick="moXacNhan('Váy Thanh Lịch')">Mua Ngay</button>
+        </div>
+        <div class="card"> 
+            <img class="photo-effect" src="image/54a3bb404f262476ec4366294cd08570.jpg" alt="Váy Ren Cao Cấp">
+            <h3>Váy Ren Cao Cấp</h3>
+            <p class="price">22.000.000 VNĐ</p>
+            <button onClick="moXacNhan('Váy Ren Cao Cấp')">Mua Ngay</button>
+        </div>
+        <div class="card"> 
+            <img class="photo-effect" src="image/e8d4fb8959127be38f431eae0a29d042.jpg" alt="Váy Hoàng Gia">
+            <h3>Váy Hoàng Gia</h3>
+            <p class="price">25.000.000 VNĐ</p>
+            <button onClick="moXacNhan('Váy Hoàng Gia')">Mua Ngay</button>
+        </div>
+    </section>
+
+    <section class="utility-section">
+        <div class="utility-box">
+            <h3>Trải Nghiệm Giao Diện</h3>
+            <button id="changeColor" class="btn-jquery">Đổi màu nền ngẫu nhiên</button>
+        </div>
+
+        <div class="utility-box">
+            <h3>Lời Ngỏ Từ Luxury Bride</h3>
+            <button id="showHide" class="btn-jquery">Hiện / Ẩn nội dung</button>
+            <p id="content">
+                Mỗi chiếc váy cưới tại Luxury Bride không chỉ là trang phục, mà là một tác phẩm nghệ thuật 
+                được dệt nên từ những ước mơ lộng lẫy nhất của Nàng.
+            </p>
+        </div>
+
+        <div class="utility-box">
+            <h3>Chất Liệu Thượng Hạng</h3>
+            <img id="photo" src="https://picsum.photos/300/200" alt="Ảnh minh họa chất liệu">
+            <p class="note-text">(Rê chuột vào ảnh để xem chi tiết)</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Về Chúng Tôi</h2>
+        <p>Luxury Bride chuyên cung cấp các mẫu váy cưới cao cấp, được thiết kế tinh tế và sang trọng. Chúng tôi mong muốn mang đến cho mỗi cô dâu vẻ đẹp lộng lẫy và tự tin nhất trong ngày hạnh phúc của mình.</p>
+        
+        <div id="counter-wrapper">
+            <p>Số lượt truy cập hệ thống:</p>
+            <div id="counter">0</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Nguyễn Thạnh An | Hotline: 0908 035 429</p>
+    </footer>
+
+    <div id="buy-modal" class="modal-overlay">
+        <div class="modal-box">
+            <h3>👑 Xác Nhận Đơn Hàng</h3>
+            <p id="modal-text">Bạn có chắc chắn muốn mua sản phẩm này không?</p>
+            <div class="modal-buttons">
+                <button class="btn-confirm" onClick="xacNhanMua()">Xác Nhận</button>
+                <button class="btn-cancel" onClick="dongXacNhan()">Hủy Bỏ</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="chat-container">
+        <div class="chat-header" id="chat-drag-handle"> 
+            <span>👑 Trợ Lý Váy Cưới VIP</span>
+            <button id="chat-toggle-btn" onClick="toggleChat()">−</button>
+        </div>
+        <div id="chat-body">
+            <div class="chat-messages" id="chat-box">
+                <div class="msg bot">Kính chào Nàng, hân hạnh được đồng hành cùng Nàng trên hành trình tìm kiếm tạo tác váy cưới hoàn mỹ tại Luxury Bride. ✨<br><br>Nàng đang quan tâm đến dòng sản phẩm nào, hoặc cần tư vấn về phom dáng, chất liệu ren Pháp, đặt lịch thử phòng VIP miễn phí... xin hãy chia sẻ cùng Luxury Bride nhé. ❤️</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="Chia sẻ SĐT, Email hoặc mong muốn của Nàng..." onKeyPress="handleKeyPress(event)">
+                <button onClick="sendMessage()">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+        // 1. Menu trượt mượt mà
+        $("#menu-toggle").click(function(){
+            $("#submenu").slideToggle(300);
+        });
+
+        // 2. Đổi màu nền ngẫu nhiên
+        $("#changeColor").click(function(){
+            let colors = ["#F5EBE6", "#EED9C4", "#E4D5B7", "#E3E8E9", "#F1E3E4"];
+            let random = colors[Math.floor(Math.random() * colors.length)];
+            $("body").css("background", random);
+        });
+
+        // 3. Hiện ẩn nội dung lời ngỏ
+        $("#showHide").click(function(){
+            $("#content").fadeToggle(400);
+        });
+
+        // 4. Phóng to ảnh minh họa khi rê chuột vào
+        $("#photo").hover(
+            function(){
+                $(this).animate({ width: "330px" }, 200);
+            },
+            function(){
+                $(this).animate({ width: "300px" }, 200);
+            }
+        );
+        
+        // 5. Tự động đóng menu con khi nhấn chọn trang
+        $("#submenu a").click(function(){
+            $("#submenu").slideUp();
+        });
+    });
+
+    // 6. Bộ đếm lượt truy cập bằng LocalStorage
+    let visits = localStorage.getItem("visitCount");
+    if(visits === null){
+        visits = 1;
+    } else {
+        visits = parseInt(visits) + 1;
+    }
+    localStorage.setItem("visitCount", visits);
+    document.getElementById("counter").innerText = visits;
+    </script>
+
+    <script src="xuly.js"></script>
+</body>
+</html>

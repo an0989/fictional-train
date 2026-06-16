@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<link href="styles/default4.css" type="text/css" rel="stylesheet"/>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - Luxury Bride</title>
+    <link href="styles/default7.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span>✨ Khai xuân như ý - Nhận ngay ưu đãi 10% cho gói thuê váy cưới cao cấp ✨</span>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="trangchu.html" class="nav-logo">Luxury Bride</a>
+            <ul class="nav-menu">
+                <li><a href="trangchu.html">Trang Chủ</a></li>
+                <li><a href="sanpham.html">Bộ Sưu Tập</a></li>
+                <li><a href="gioithieu.html" class="active">Giới Thiệu</a></li>
+                <li><a href="lienhe.html">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<a href="trangchu.html" class="btn-back-floating" id="draggableBackBtn" title="Quay về trang chủ">
+        <svg viewBox="0 0 24 24">
+            <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+        </svg>
+    </a>
+
+    <header class="luxury-header">
+        <div class="header-bg"></div>
+        <div class="header-overlay"></div>
+        <div class="banner">
+            <h1>Luxury Bride</h1>
+            <div class="divider-line"></div>
+            <p class="tagline">Khởi Đầu Hành Trình Hạnh Phúc Của Bạn</p>
+            <p class="sub-title">Nơi biến những giấc mơ lộng lẫy nhất của nàng thành hiện thực với không gian thử đồ chuẩn hoàng gia và những thiết kế độc bản.</p>
+        </div>
+    </header>
+
+    <section class="gioithieu">
+        <div class="title-block">
+            <span class="subtitle">Hành trình thương hiệu</span>
+          <h2>Câu Chuyện Luxury Bride</h2>
+        </div>
+        
+        <p class="intro-lead">
+            Chào mừng bạn đến với <b>Luxury Bride</b> – Nơi biến giấc mơ công chúa của mọi cô gái thành hiện thực trong ngày trọng đại nhất cuộc đời.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">👑</span>
+                <h3>Thiết Kế Hoàng Gia</h3>
+                <p>Sở hữu những bộ sưu tập váy cưới độc quyền mang đậm phong cách quý phái, cổ điển giao thoa cùng xu hướng hiện đại.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">💎</span>
+                <h3>Chất Liệu Thượng Hạng</h3>
+                <p>100% chất liệu ren Pháp, voan tơ cao cấp kết hợp đính kết đá Swarovski thủ công lấp lánh tỉ mỉ trên từng đường kim.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🌹</span>
+                <h3>Trải Nghiệm Hoàn Hảo</h3>
+                <p>Đội ngũ chuyên viên tư vấn tận tâm, không gian thử váy riêng tư chuẩn 5 sao đem lại sự tự tin tuyệt đối cho nàng thơ.</p>
+            </div>
+        </div>
+
+        <div class="explore-action">
+            <a href="sanpham.html" class="btn-explore">Khám Phá Bộ Sưu Tập Ngay</a>
+        </div>
+    </section>
+
+    <div class="ai-assistant-widget">
+        <button class="ai-toggle-btn" id="chatTrigger" onclick="toggleChat(event)">
+            <span class="ai-icon">✨</span>
+            <span class="ai-badge">1</span>
+        </button>
+        
+      <div class="ai-chat-box" id="chatBox">
+            <div class="ai-chat-header" id="chatHeader">
+                <div class="ai-avatar">👑</div>
+                <div class="ai-status-info">
+                    <h4>Trợ Lý Luxury</h4>
+                    <p>🟢 Đang trực tuyến</p>
+                </div>
+                <button class="ai-close-btn" onclick="toggleChat(event)">×</button>
+            </div>
+            <div class="ai-chat-body" id="chatMessages">
+                <div class="ai-msg bot">
+                    Xin chào nàng thơ! Luxury Bride có thể giúp gì cho ngày chung đôi của bạn hôm nay? 💕
+              </div>
+            </div>
+            <div class="ai-chat-footer">
+                <input type="text" id="chatInput" placeholder="Nhắn cho trợ lý của Nàng..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-brand">Luxury Bride</div>
+        <p>© 2026 Nguyễn Thạnh An&nbsp; | Nơi Lưu Giữ Khoảnh Khắc Hạnh Phúc</p>
+    </footer>
+
+    <script src="scrite/taitrang5.js" type="text/javascript"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // --- 1. XỬ LÝ KÉO THẢ NÚT QUAY LẠI TỰ HÚT THÔNG MINH ---
+            const dragBtn = document.getElementById("draggableBackBtn");
+            if (dragBtn) {
+                let isDragging = false;
+                let startX, startY, initialX, initialY;
+                let hasMoved = false;
+
+                function dragStart(e) {
+                    isDragging = true;
+                    hasMoved = false;
+                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                    startX = clientX;
+                    startY = clientY;
+                    const rect = dragBtn.getBoundingClientRect();
+                    initialX = rect.left;
+                    initialY = rect.top;
+                    dragBtn.style.transition = "none";
+                }
+
+                function dragging(e) {
+                    if (!isDragging) return;
+                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                    const deltaX = clientX - startX;
+                    const deltaY = clientY - startY;
+
+                    if (Math.abs(deltaX) > 5 || Math.abs(deltaY) > 5) {
+                        hasMoved = true;
+                    }
+
+                    let newX = initialX + deltaX;
+                    let newY = initialY + deltaY;
+
+                    const padding = 15;
+                    const maxX = window.innerWidth - dragBtn.offsetWidth - padding;
+                    const maxY = window.innerHeight - dragBtn.offsetHeight - padding;
+
+                    if (newX < padding) newX = padding;
+                    if (newX > maxX) newX = maxX;
+                    if (newY < padding) newY = padding;
+                    if (newY > maxY) newY = maxY;
+
+                    dragBtn.style.left = newX + "px";
+                    dragBtn.style.top = newY + "px";
+                    dragBtn.style.bottom = "auto";
+                    dragBtn.style.right = "auto";
+                }
+
+                function dragEnd() {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    dragBtn.style.transition = "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)";
+
+                    const rect = dragBtn.getBoundingClientRect();
+                    const screenWidth = window.innerWidth;
+                    const btnWidth = dragBtn.offsetWidth;
+                    const padding = 20;
+
+                    if (rect.left + btnWidth / 2 < screenWidth / 2) {
+                        dragBtn.style.left = padding + "px";
+                    } else {
+                        dragBtn.style.left = (screenWidth - btnWidth - padding) + "px";
+                    }
+                }
+
+                dragBtn.addEventListener("click", function (e) {
+                    if (hasMoved) e.preventDefault();
+                });
+
+                dragBtn.addEventListener("mousedown", dragStart);
+                document.addEventListener("mousemove", dragging);
+                document.addEventListener("mouseup", dragEnd);
+                dragBtn.addEventListener("touchstart", dragStart, { passive: true });
+                document.addEventListener("touchmove", dragging, { passive: false });
+                document.addEventListener("touchend", dragEnd);
+            }
+        });
+
+        // --- 2. XỬ LÝ HOẠT ĐỘNG CHATBOX ĐỒNG BỘ ---
+        function toggleChat(event) {
+            if(event) event.stopPropagation();
+            const chatBox = document.getElementById("chatBox");
+            const badge = document.querySelector(".ai-badge");
+            
+            if (chatBox) {
+                chatBox.classList.toggle("open");
+                if (badge) badge.style.display = 'none';
+                
+                if (chatBox.classList.contains("open")) {
+                    setTimeout(() => {
+                        const msgArea = document.getElementById("chatMessages");
+                        msgArea.scrollTop = msgArea.scrollHeight;
+                    }, 300);
+                }
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("chatInput");
+            const messageText = input.value.trim();
+            if (messageText === "") return;
+
+            const chatMessages = document.getElementById("chatMessages");
+
+            // Tạo bong bóng chat user
+            const userMsg = document.createElement("div");
+            userMsg.className = "ai-msg user";
+            userMsg.innerText = messageText;
+            chatMessages.appendChild(userMsg);
+
+            input.value = "";
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Phản hồi tự động hoàng gia
+            setTimeout(() => {
+                const botMsg = document.createElement("div");
+                botMsg.className = "ai-msg bot";
+                botMsg.innerText = "Cảm ơn nàng thơ đã chia sẻ. Chuyên viên tư vấn Luxury Bride sẽ liên hệ trực tiếp hỗ trợ nàng ngay trong ít phút nhé! ✨";
+                chatMessages.appendChild(botMsg);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000);
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+</html>

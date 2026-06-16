@@ -1,0 +1,291 @@
+/* --- BỔ SUNG ĐỊNH DẠNG CHO TRANG LIÊN HỆ SANG XỊN MỊN --- */
+.contact-header {
+    height: 50vh !important; /* Hạ thấp chiều cao banner trang liên hệ để tập trung vào Form */
+}
+
+.contact-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: -80px auto 90px; /* Đẩy khối nội dung đè nhẹ lên banner tạo chiều sâu */
+    position: relative;
+    z-index: 10;
+}
+
+.title-block {
+    text-align: center;
+    margin-bottom: 50px;
+    background: rgba(253, 252, 249, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.title-block .subtitle {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a46b;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.title-block h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    color: #1a160e;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.title-block p {
+    color: #706557;
+    font-size: 15px;
+}
+
+/* Bố cục chia hai cột */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 40px;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(28, 25, 22, 0.06);
+    border: 1px solid rgba(200, 164, 107, 0.15);
+}
+
+/* Cột thông tin bên trái */
+.info-panel {
+    background: #1a160e;
+    color: #f7e7ce;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #c8a46b;
+}
+
+.info-panel h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+    color: #f7e7ce;
+}
+
+.info-list p {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    color: #eadecc;
+    line-height: 1.6;
+}
+
+.info-list p span {
+    font-size: 20px;
+}
+
+.info-quote {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px dashed rgba(200, 164, 107, 0.3);
+}
+
+.info-quote p {
+    font-style: italic;
+    font-size: 13.5px;
+    color: #b5a896;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Cột Form bên phải */
+.form-panel {
+    padding: 50px;
+    background: white;
+}
+
+.form-panel h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    color: #1a160e;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+/* Hiệu ứng Floating Label (Nhãn chuyển động khi bấm vào ô nhập) */
+.form-panel .input-group {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.form-panel input[type="text"],
+.form-panel input[type="email"],
+.form-panel input[type="tel"],
+.form-panel textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #e0dacd;
+    border-radius: 12px;
+    outline: none;
+    font-size: 14.5px;
+    background: #fffcf9;
+    color: #1a160e;
+    transition: all 0.3s ease;
+}
+
+.form-panel textarea {
+    height: 110px;
+    resize: none;
+}
+
+.form-panel .input-group label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9c8e7c;
+    font-size: 14px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.form-panel textarea ~ label {
+    top: 25px;
+}
+
+/* Khi ô input được focus hoặc đã có chữ bên trong */
+.form-panel input:focus,
+.form-panel textarea:focus {
+    border-color: #c8a46b;
+    background: white;
+    box-shadow: 0 4px 12px rgba(200, 164, 107, 0.08);
+}
+
+.form-panel input:focus ~ label,
+.form-panel input:not(:placeholder-shown) ~ label,
+.form-panel textarea:focus ~ label,
+.form-panel textarea:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 12px;
+    color: #c8a46b;
+    background: white;
+    padding: 0 8px;
+    transform: translateY(-50%) translateX(-5px);
+}
+
+/* Định dạng đặc biệt cho ô Chọn Ngày */
+.date-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.date-label {
+    position: static !important;
+    transform: none !important;
+
+    font-size: 13.5px !important;
+    color: #5c5346 !important;
+    font-weight: 500;
+}
+
+.form-panel input[type="date"] {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid #e0dacd;
+    border-radius: 12px;
+    background: #fffcf9;
+    outline: none;
+    font-size: 14px;
+    color: #1a160e;
+}
+
+/* Thông báo lỗi */
+.error-msg {
+    color: #d93838;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    padding-left: 5px;
+    font-weight: 500;
+}
+
+/* Nút bấm gửi đơn */
+.form-panel button[type="submit"] {
+    width: 100%;
+    background: #1a160e;
+    color: #f7e7ce;
+    border: 1px solid #1a160e;
+    padding: 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-panel button[type="submit"]:hover {
+    background: #c8a46b;
+    border-color: #c8a46b;
+    color: white;
+    box-shadow: 0 6px 20px rgba(200, 164, 107, 0.35);
+    transform: translateY(-2px);
+}
+
+/* Nút quay lại dưới form */
+.back-action {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-action a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #1a160e;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 1px solid #1a160e;
+    padding: 12px 30px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.back-action a:hover {
+    background: #1a160e;
+    color: #f7e7ce;
+}
+
+.icon-back {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* Tương thích di động */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .info-panel {
+        padding: 40px 30px;
+        border-right: none;
+        border-bottom: 1px solid #c8a46b;
+    }
+    .form-panel {
+        padding: 40px 25px;
+    }
+    .title-block h2 {
+        font-size: 28px;
+    }
+}

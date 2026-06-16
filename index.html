@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<link href="styles/default5.css" type="text/css" rel="stylesheet"/>
+<script src="scrite/taitrang3.js" type="text/javascript"></script>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ & Đặt Lịch - Luxury Bride</title>
+    <link href="styles/default7.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="trangchu.html" class="nav-logo">Luxury Bride</a>
+            <ul class="nav-menu">
+                <li><a href="trangchu.html">Trang Chủ</a></li>
+                <li><a href="sanpham.html">Bộ Sưu Tập</a></li>
+                <li><a href="gioithieu.html">Giới Thiệu</a></li>
+                <li><a href="lienhe.html" class="active">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="contact-header">
+        <div class="header-bg"></div>
+        <div class="header-overlay"></div>
+        <div class="banner">
+            <h1>Luxury Bride</h1>
+            <div class="divider-line"></div>
+            <p>Nơi Lắng Nghe Và Hiện Thực Hóa Giấc Mơ Của Nàng</p>
+        </div>
+    </header>
+
+    <div class="contact-section">
+        <div class="title-block">
+            <span class="subtitle">Kết nối cùng chúng tôi</span>
+          <h2>Đặt Lịch Hẹn Riêng</h2>
+            <p>Luxury Bride luôn sẵn sàng đồng hành cùng Nàng trên con đường chạm tay vào hạnh phúc.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="info-panel">
+                <h3>Thông Tin Liên Hệ</h3>
+                <div class="info-list">
+                    <p><span>📍</span> 123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p>
+                    <p><span>📞</span> 0908 035 429</p>
+                    <p><span>📧</span> tha9nhan.jek@gmail.com</p>
+                    <p><span>🕒</span> Giờ mở cửa: 08:00 - 21:00 (Hàng ngày)</p>
+                </div>
+                <div class="info-quote">
+                    <p>“Mỗi đường kim mũi chỉ, mỗi thước vải ren dệt tay tại Luxury Bride đều mang sứ mệnh giúp Nàng trở thành phiên bản lộng lẫy và kiêu sa nhất trong ngày trọng đại.”</p>
+                </div>
+            </div>
+
+            <div class="form-panel">
+                <h3>Phiếu Đăng Ký Thử Váy</h3>
+                <form id="appointmentForm" novalidate>
+                    
+                    <div class="input-group">
+                        <input type="text" id="fullname" name="fullname" required placeholder=" ">
+                        <label for="fullname">Họ và tên của Nàng</label>
+                      <span class="error-msg" id="nameError"></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Địa chỉ Email (Ví dụ: name@gmail.com)</label>
+                      <span class="error-msg" id="emailError"></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="tel" id="phone" name="phone" required placeholder=" ">
+                        <label for="phone">Số điện thoại di động</label>
+                      <span class="error-msg" id="phoneError"></span>
+                    </div>
+                    
+                    <div class="input-group date-group">
+                        <label class="date-label" for="appointmentDate">Ngày Nàng muốn đến tư vấn & thử váy:</label>
+                        <input type="date" id="appointmentDate" name="appointmentDate" required>
+                        <span class="error-msg" id="dateError"></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <textarea id="message" name="message" required placeholder=" "></textarea>
+                        <label for="message">Mẫu váy Nàng đang quan tâm hoặc lời nhắn gửi...</label>
+                      <span class="error-msg" id="messageError"></span>
+                    </div>
+
+                    <button type="submit" id="submitBtn">
+                        <span class="btn-text">Gửi Yêu Cầu Đặt Lịch</span>
+                        <span class="btn-loader" style="display: none;">Đang gửi...</span>
+                  </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="back-action">
+            <a href="trangchu.html">
+                <svg viewBox="0 0 24 24" class="icon-back">
+                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                </svg>
+                Quay Lại Trang Chủ
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-brand">Luxury Bride</div>
+        <p>© 2026 Nguyễn Thạnh An&nbsp; | Nơi Lưu Giữ Khoảnh Khắc Hạnh Phúc Ban Sơ</p>
+    </footer>
+
+    <script src="scrite/taitrang5.js" type="text/javascript"></script>
+</body>
+</html>

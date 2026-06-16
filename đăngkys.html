@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<script src="scrite/taitrang2.js" type="text/javascript"></script>
+<link href="styles/default3.css" type="text/css" rel="stylesheet"/>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Bride - Đăng Ký Tài Khoản</title>
+    <link href="styles/default7.css" type="text/css" rel="stylesheet"/>
+</head>
+<body class="auth-body">
+
+    <div id="draggable-back-btn" class="floating-back-btn" onclick="goToHome(event)" title="Quay về trang chủ">
+        <span>←</span>
+    </div>
+
+    <div class="auth-wrapper">
+        <div class="form-box">
+
+            <div class="logo">
+                <h1>Luxury Bride</h1>
+                <div class="divider-line"></div>
+                <p>Vẻ đẹp hoàn hảo cho ngày trọng đại</p>
+            </div>
+
+            <h2>Đăng Ký Tài Khoản</h2>
+
+            <form id="registerForm" novalidate>
+                <div class="input-group">
+                    <input type="text" id="fullname" required placeholder=" ">
+                    <label for="fullname">Họ và tên của Nàng</label>
+                    <span class="error-msg" id="nameError"></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" required placeholder=" ">
+                    <label for="email">Địa chỉ Email</label>
+                    <span class="error-msg" id="emailError"></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="tel" id="phone" required placeholder=" ">
+                    <label for="phone">Số điện thoại</label>
+                    <span class="error-msg" id="phoneError"></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" required placeholder=" ">
+                    <label for="password">Mật khẩu (Tối thiểu 6 ký tự)</label>
+                    <span class="error-msg" id="passwordError"></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="re-password" required placeholder=" ">
+                    <label for="re-password">Xác nhận lại mật khẩu</label>
+                    <span class="error-msg" id="rePasswordError"></span>
+                </div>
+
+                <button type="submit" class="btn-auth">Tạo Tài Khoản</button>
+            </form>
+
+            <p id="thongbao"></p>
+
+            <div class="switch-page">
+                Đã có không gian riêng? <a href="đangnhap.html">Đăng nhập tại đây</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="scrite/taitrang5.js" type="text/javascript"></script>
+</body>
+</html>

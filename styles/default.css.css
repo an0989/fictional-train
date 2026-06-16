@@ -1,0 +1,445 @@
+/* ==========================================================================
+   --- CÀI ĐẶT CHUNG ---
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fcf8f7;
+    color: #4a4a4a;
+    line-height: 1.6;
+    transition: background 0.4s ease; /* Giúp hiệu ứng đổi màu nền ngẫu nhiên mượt hơn */
+}
+
+/* ==========================================================================
+   --- HEADER ---
+   ========================================================================== */
+header {
+    background: linear-gradient(rgba(235, 184, 184, 0.2), rgba(255, 255, 255, 1)), url('../image/bg-wedding.jpg') center/cover;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.5rem;
+    color: #d4a373;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #8b786d;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   --- MENU ĐIỀU HƯỚNG (Đã tối ưu chuẩn Luxury) ---
+   ========================================================================== */
+nav {
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Nút bấm Menu chính */
+#menu-toggle {
+    background: #d4a373; /* Đồng bộ màu vàng quý phái với tổng thể */
+    color: white;
+    padding: 14px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background 0.3s ease, letter-spacing 0.3s ease;
+}
+
+#menu-toggle:hover {
+    background: #b88655;
+    letter-spacing: 3px; /* Hiệu ứng giãn chữ nhẹ khi di chuột */
+}
+
+/* Khu vực kho menu con mở rộng */
+#submenu {
+    display: none; /* jQuery điều khiển ẩn hiện */
+    background: #2c2c2f;
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 3px solid #d4a373;
+}
+
+#submenu a {
+    color: #e5dfdc;
+    text-decoration: none;
+    padding: 8px 24px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#submenu a:hover {
+    color: #d4a373;
+    transform: translateY(-2px); /* Nhấc nhẹ chữ lên khi hover */
+}
+
+/* ==========================================================================
+   --- DANH SÁCH SẢN PHẨM ---
+   ========================================================================== */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding-bottom: 25px;
+    border: 1px solid #f0e6e3;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(212, 163, 115, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.03);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: #4a3f3b;
+    margin: 20px 0 8px 0;
+    font-weight: 600;
+}
+
+.card .price {
+    color: #d4a373;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.card button {
+    background: #d4a373;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.card button:hover {
+    background: #b88655;
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   --- KHU VỰC TIỆN ÍCH ĐỘNG (JQUERY UTILITY) ---
+   ========================================================================== */
+.utility-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.utility-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+    text-align: center;
+    border: 1px solid #f0e6e3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.utility-box h3 {
+    color: #4a3f3b;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f5eae6;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.btn-jquery {
+    padding: 11px 25px;
+    background: #d4a373;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-jquery:hover {
+    background: #b88655;
+    box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3);
+}
+
+#content {
+    margin-top: 15px;
+    line-height: 1.6;
+    color: #6d5952;
+    font-size: 0.95rem;
+}
+
+/* Khu vực ảnh phóng to mịn màng */
+.utility-box img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.note-text {
+    font-size: 12px;
+    color: #9c8c86;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   --- KHỐI GIỚI THIỆU & BỘ ĐẾM VÀO TRANG ---
+   ========================================================================== */
+#about {
+    background-color: #f5eae6;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 50px;
+}
+
+#about h2 {
+    font-size: 2rem;
+    color: #4a3f3b;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#about h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: #d4a373;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #7a6b65;
+}
+
+#counter-wrapper {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #8b786d;
+}
+
+#counter {
+    font-size: 2rem;
+    color: #d4a373;
+    font-weight: 700;
+    margin-top: 5px;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* ==========================================================================
+   --- FOOTER ---
+   ========================================================================== */
+footer {
+    background-color: #3a322f;
+    color: #c5b9b5;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   --- POP-UP MODAL ---
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(3px); /* Tạo vệt mờ sương sang chảnh cho nền khi popup hiện */
+}
+
+.modal-box {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ==========================================================================
+   --- CHATBOX KÉO THẢ ---
+   ========================================================================== */
+#chat-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 320px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+    z-index: 1000;
+    border: 1px solid #f0e6e3;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #d4a373, #e8c5a0);
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.chat-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+#chat-body {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #fdfbfc;
+    display: flex;
+    flex-direction: column;
+}
+
+.msg {
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    max-width: 85%;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.msg.bot {
+    background: #f0e6e3;
+    color: #4a3f3b;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+
+.msg.user {
+    background: #d4a373;
+    color: white;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #f0e6e3;
+    background: white;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #e8dfdc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.chat-input-area button {
+    background: #d4a373;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    margin-left: 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Hiệu ứng mượt của Modal */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}

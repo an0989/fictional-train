@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Lịch Hẹn Thử Váy VIP - Luxury Bride</title>
+    <link href="styles/default7.css" type="text/css" rel="stylesheet"/>
+    
+    <style>
+        /* ==========================================================================
+           🌸 TRỌN BỘ ĐỊNH DẠNG THANH MENU & LAYOUT KHÔNG GIAN ĐẶT LỊCH HẸN
+           ========================================================================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #fffcfc;
+            color: #4a3b3b;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- THANH MENU THỜI THƯỢNG (STICKY GLASS NAVBAR) --- */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 999;
+            padding: 25px 0;
+            background: rgba(255, 245, 245, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Khi cuộn trang hoặc ở trạng thái cố định của trang con */
+        .navbar.scrolled {
+            padding: 14px 0;
+            background: rgba(255, 255, 255, 0.88) !important; 
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            box-shadow: 0 10px 40px rgba(255, 154, 162, 0.08) !important;
+            border-bottom: 1px solid rgba(255, 183, 178, 0.3);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            color: #ff9aa2;
+            text-decoration: none;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+            text-shadow: 0 1px 4px rgba(255, 154, 162, 0.15);
+            transition: color 0.3s ease;
+        }
+
+        .navbar.scrolled .nav-logo {
+            color: #ff7b89; /* Hồng đậm nét quý phái khi cuộn */
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #ffffff; /* Màu chữ trắng sang trọng lúc ban đầu */
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            font-size: 12.5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        /* Chuyển chữ sang màu tối dịu khi menu đổi màu nền */
+        .navbar.scrolled .nav-menu a {
+            color: #614e4e;
+            text-shadow: none;
+        }
+
+        .nav-menu a:hover, 
+        .nav-menu a.active {
+            color: #ff9aa2 !important;
+            text-shadow: none;
+        }
+
+        /* Thanh gạch chân mượt mà dưới menu */
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 0; height: 2px;
+            background: #ff9aa2;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        /* --- BỐ CỤC KHÔNG GIAN ĐẶT LỊCH --- */
+        .booking-wrapper {
+            max-width: 1200px;
+            margin: 160px auto 100px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+        }
+
+        /* VÙNG BÊN TRÁI: KHUNG FORM TRẮNG SANG TRỌNG */
+        .booking-form-card {
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 183, 178, 0.25);
+            box-shadow: 0 15px 45px rgba(255, 154, 162, 0.06);
+        }
+
+        .booking-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .booking-heading span {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ff9aa2;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .booking-heading h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 32px;
+            color: #4a3434;
+            font-weight: 400;
+        }
+
+        .form-row-double {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group-premium {
+            margin-bottom: 22px;
+        }
+
+        .form-group-premium label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #614e4e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-input-premium {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 30px;
+            border: 1px solid #ffd5d8;
+            outline: none;
+            font-size: 14px;
+            color: #4a3b3b;
+            background: #fffcfc;
+            transition: all 0.3s ease;
+        }
+
+        .form-input-premium:focus {
+            border-color: #ff9aa2;
+            background: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 154, 162, 0.15);
+        }
+
+        select.form-input-premium {
+            cursor: pointer;
+        }
+
+        textarea.form-input-premium {
+            border-radius: 18px;
+            resize: none;
+            height: 110px;
+        }
+
+        /* NÚT BẤM GỬI YÊU CẦU HOÀNG GIA */
+        .btn-booking-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #ff9aa2, #ffb7b2);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 154, 162, 0.3);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 10px;
+        }
+
+        .btn-booking-submit:hover {
+            background: linear-gradient(135deg, #ffb7b2, #ff9aa2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 154, 162, 0.5);
+        }
+
+        /* VÙNG BÊN PHẢI: SIDEBAR THÔNG TIN CỬA HÀNG */
+        .booking-info-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-card-premium {
+            background: #2d2323; /* Nâu chocolate quý phái */
+            color: #fff0f1;
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(45, 35, 35, 0.1);
+        }
+
+        .info-card-premium h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #ff9aa2;
+            letter-spacing: 1px;
+        }
+
+        .info-item {
+            margin-bottom: 18px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .info-item strong {
+            color: #ffffff;
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        /* BẢN ĐỒ KHUNG GOOGLE MAPS */
+        .map-card-premium {
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 183, 178, 0.25);
+            height: 100%;
+            min-height: 280px;
+            box-shadow: 0 10px 30px rgba(255, 154, 162, 0.04);
+        }
+
+        .map-card-premium iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- FOOTER CHÂN TRANG --- */
+        footer {
+            background: #2d2323;
+            color: #bfa3a5;
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 13.5px;
+            border-top: 2px solid #ff9aa2;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 26px;
+            color: #fff0f1;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* ==========================================================================
+           🌸 ĐÁP ỨNG GIAO DIỆN DI ĐỘNG (RESPONSIVE)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .navbar { background: rgba(255, 255, 255, 0.98); padding: 15px 0; }
+            .navbar:not(.scrolled) .nav-menu a { color: #614e4e; text-shadow: none; }
+            .nav-container { flex-direction: column; gap: 8px; }
+            .nav-menu { gap: 20px; }
+            .booking-wrapper {
+                grid-template-columns: 1fr;
+                margin-top: 140px;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .booking-form-card { padding: 25px 20px; }
+            .form-row-double { grid-template-columns: 1fr; gap: 0; }
+            .booking-heading h2 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="mainNavbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">Luxury Bride</a>
+        <ul class="nav-menu">
+            <li><a href="trangchu.html">Trang Chủ</a></li>
+            <li><a href="sanpham.html">Bộ Sưu Tập</a></li>
+            <li><a href="gioithieu.html">Giới Thiệu</a></li>
+            <li><a href="lienhe.html" class="active">Liên Hệ</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="booking-wrapper">
+    
+    <section class="booking-form-card">
+        <div class="booking-heading">
+            <span>Private Fitting</span>
+            <h2>Đặt Lịch Hẹn Thử Váy</h2>
+            <div style="color: #ffb7b2; font-size: 10px; margin-top: 5px; letter-spacing: 4px;">✦  ✦  ✦</div>
+        </div>
+
+        <form id="luxuryFittingForm" onsubmit="executeBooking(event)">
+            
+            <div class="form-row-double">
+                <div class="form-group-premium">
+                    <label>Tên của nàng thơ *</label>
+                    <input type="text" class="form-input-premium" placeholder="Ví dụ: Nguyễn Quỳnh Anh" required>
+                </div>
+                <div class="form-group-premium">
+                    <label>Số điện thoại *</label>
+                    <input type="tel" class="form-input-premium" placeholder="Để tụi mình gọi xác nhận" required>
+                </div>
+            </div>
+
+            <div class="form-row-double">
+                <div class="form-group-premium">
+                    <label>Chọn ngày hẹn mong muốn *</label>
+                    <input type="date" class="form-input-premium" id="appointmentDate" required>
+                </div>
+                <div class="form-group-premium">
+                    <label>Khung giờ thử váy VIP *</label>
+                    <select class="form-input-premium" required>
+                        <option value="" disabled selected>Chọn giờ tiếp đón</option>
+                        <option value="09:00">09:00 AM - 11:00 AM</option>
+                        <option value="11:00">11:00 AM - 13:00 PM</option>
+                        <option value="14:00">14:00 PM - 16:00 PM</option>
+                        <option value="16:00">16:00 PM - 18:00 PM</option>
+                        <option value="18:00">18:00 PM - 20:00 PM (Khung giờ Vàng)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group-premium">
+                <label>Mẫu thiết kế nàng đang ngắm chọn</label>
+                <select class="form-input-premium">
+                    <option value="none">Nàng muốn đến xem trực tiếp và nghe tư vấn từ Stylist</option>
+                    <option value="princess">Váy Công Chúa Silk Tulle — 15.000.000 ₫</option>
+                    <option value="mermaid">Váy Đuôi Cá Premium Satin — 19.500.000 ₫</option>
+                    <option value="lace">Váy Cưới Vintage French Lace — 22.000.000 ₫</option>
+                    <option value="swan">Váy Thiên Nga Đắp Ren Pháp — 22.000.000 ₫</option>
+                    <option value="minimalist">Váy Thanh Lịch Minimalist — 18.000.000 ₫</option>
+                    <option value="pearl">Váy Ngọc Trai Vintage Glow — 31.000.000 ₫</option>
+                </select>
+            </div>
+
+            <div class="form-group-premium">
+                <label>Lời nhắn hoặc yêu cầu đặc biệt gửi Boutique</label>
+                <textarea class="form-input-premium" placeholder="Hãy chia sẻ về số đo, phong cách tiệc cưới hoặc yêu cầu chỉnh sửa theo số đo riêng của nàng nhé..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-booking-submit">Xác Nhận Đăng KÝ LỊCH THỬ VÁY VIP</button>
+        </form>
+    </section>
+
+    <aside class="booking-info-sidebar">
+        
+        <div class="info-card-premium">
+            <h3>Luxury Bride Store</h3>
+            
+            <div class="info-item">
+                <strong>Địa chỉ Boutique</strong>
+              Phường Tam Thắng   , Thành phố Hồ Chí Minh
+          </div>
+            
+            <div class="info-item">
+                <strong>Hotline tư vấn VIP</strong>
+                0909.XXX.XXX (Hỗ trợ 24/7)
+            </div>
+
+            <div class="info-item">
+                <strong>Thời gian làm việc</strong>
+                09:00 AM - 21:00 PM (Làm việc cả Thứ 7 & Chủ Nhật)
+            </div>
+        </div>
+
+        <div class="map-card-premium">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674431005!2d106.7001402!3d10.7787961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f46fe3144eb%3A0x7d6a5c1e7a57a1b4!2zQuG6v24gTmdow6ksIFF14bqtbiAxLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </aside>
+</main>
+
+<footer>
+    <div class="footer-brand">Luxury Bride</div>
+  <p>© 2026 Nguyễn Thạnh An | T25TKDH2</p>
+    <p>&nbsp;</p>
+</footer>
+
+<script>
+    // Kiểm soát không cho đặt lịch lùi về quá khứ
+    const todaySetting = new Date().toISOString().split('T')[0];
+    document.getElementById('appointmentDate').setAttribute('min', todaySetting);
+
+    // Kịch bản xử lý hiệu ứng đổi thanh menu mượt mà khi cuộn trang
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('mainNavbar');
+        if (window.scrollY > 20) {
+            navbar.classList.add('scrolled');
+        } else {
+            // Vẫn giữ lại cấu trúc nền mờ tinh khiết của trang liên hệ
+            navbar.classList.add('scrolled'); 
+        }
+    });
+
+    // Hàm thực thi gửi form và phản hồi nàng thơ
+    function executeBooking(event) {
+        event.preventDefault();
+        alert("✨ Thật tuyệt vời! Lịch hẹn thử váy VIP của nàng đã được gửi tới hệ thống.\n\nĐội ngũ Stylist riêng của Luxury Bride sẽ liên hệ trực tiếp với nàng qua số điện thoại để chốt khung giờ đón tiếp chu đáo nhất trong 15 phút tới nhé! 🌸");
+        document.getElementById("luxuryFittingForm").reset();
+    }
+</script>
+
+<script src="scrite/taitrang5.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+/* --- BỔ SUNG ĐỊNH DẠNG TRANG GIỚI THIỆU SANG TRỌNG --- */
+
+/* Thanh thông báo ưu đãi ở trên cùng */
+.top-bar {
+    background: #16130d;
+    color: #f7e7ce;
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1001;
+    border-bottom: 1px solid rgba(200, 164, 107, 0.2);
+}
+
+/* Đảm bảo navbar hít phía dưới top-bar chuẩn xác */
+.top-bar + .navbar {
+    top: 31px;
+}
+
+/* Căn chỉnh chiều cao Banner Giới Thiệu */
+.luxury-header {
+    height: 65vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.luxury-header .header-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    z-index: 1;
+}
+
+.luxury-header .header-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(28, 25, 22, 0.5), rgba(28, 25, 22, 0.85));
+    z-index: 2;
+}
+
+.luxury-header .banner {
+    position: relative;
+    z-index: 3;
+    max-width: 850px;
+    padding: 0 20px;
+    margin-top: 40px;
+}
+
+.luxury-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 56px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #f7e7ce;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fffcf7;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.sub-title {
+    font-size: 14.5px;
+    color: #e3ded5;
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Nút quay về trang chủ dạng nổi có thể kéo thả tự do */
+.btn-back-floating {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 1px solid #eadecc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    cursor: move;
+    z-index: 998;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-back-floating:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(200, 164, 107, 0.2);
+}
+
+.btn-back-floating svg {
+    width: 20px;
+    height: 20px;
+    fill: #1a160e;
+}
+
+/* Khối nội dung giới thiệu chính */
+.gioithieu {
+    width: 90%;
+    max-width: 1200px;
+    margin: 90px auto;
+    text-align: center;
+}
+
+.intro-lead {
+    font-size: 18px;
+    color: #4a4235;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+/* Hệ thống thẻ lưới tính năng */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin-bottom: 70px;
+}
+
+.feature-card {
+    background: white;
+    padding: 45px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(200, 164, 107, 0.12);
+    box-shadow: 0 4px 20px rgba(28, 25, 22, 0.02);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(200, 164, 107, 0.12);
+    border-color: #c8a46b;
+}
+
+.feature-icon {
+    font-size: 38px;
+    display: block;
+    margin-bottom: 22px;
+}
+
+.feature-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 21px;
+    color: #1a160e;
+    margin-bottom: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.feature-card p {
+    color: #6e6455;
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+/* Khu vực nút kêu gọi khám phá hành trình */
+.explore-action {
+    margin-top: 30px;
+}
+
+.btn-explore {
+    display: inline-block;
+    text-decoration: none;
+    background: #1a160e;
+    color: #f7e7ce;
+    border: 1px solid #1a160e;
+    padding: 15px 45px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(28, 25, 22, 0.15);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-explore:hover {
+    background: #c8a46b;
+    border-color: #c8a46b;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(200, 164, 107, 0.3);
+}
+
+/* Khối bọc tiêu đề tinh tế */
+.title-block {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title-block .subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c8a46b;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.title-block h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 34px;
+    color: #1a160e;
+    font-weight: 400;
+}
+
+/* Đồng bộ lớp phủ hộp chat mở rộng */
+.ai-chat-box.open {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+}
+
+/* Phản hồi di động tối ưu */
+@media (max-width: 768px) {
+    .luxury-header { height: 60vh; }
+    .luxury-header h1 { font-size: 36px; letter-spacing: 4px; }
+    .tagline { font-size: 13px; }
+    .sub-title { font-size: 13px; line-height: 1.7; }
+    .intro-lead { font-size: 15px; margin-bottom: 40px; }
+    .features-grid { gap: 20px; }
+    .feature-card { padding: 35px 20px; }
+    .title-block h2 { font-size: 26px; }
+    .btn-back-floating { bottom: 20px; left: 20px; width: 44px; height: 44px; }
+}
